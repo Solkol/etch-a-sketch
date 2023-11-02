@@ -1,0 +1,12 @@
+.row {
+    display: flex;
+    background-color: aqua;
+}
+
+.gridElement {
+    background-color: red;
+    width: 12px;
+    height: 12px;
+    padding: 8px;
+    border: 12px black;
+}
