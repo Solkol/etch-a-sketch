@@ -5,7 +5,7 @@ const btnSquare = document.querySelector('#btnSquare');
 const gridContainer = document.querySelector('#gridContainer');
 
 btnSquare.addEventListener('click', () => {
-	squares = Number(prompt('Select number of elements per side of the grid: ', "16"));
+	squares = getSquaresNumber();
     deleteGrid(gridContainer);
     createGrid(gridContainer);
 });
@@ -34,4 +34,16 @@ function deleteGrid(grid) {
 	while (grid.firstChild) {
 		grid.removeChild(grid.firstChild);
 	}
+}
+
+function getSquaresNumber() {
+    let number;
+    do {
+        number = Number(prompt('Select number of elements per side of the grid (max: 100; min: 16):', "16"));
+        if (number > 100 || number < 16) {
+            alert('Invalid Number! Try again.');
+        }
+    } while (number > 100 || number < 16);
+
+    return number;
 }
