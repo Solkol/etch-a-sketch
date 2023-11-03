@@ -2,11 +2,12 @@ let color = 'green';
 let squares = 16;
 
 const btnSquare = document.querySelector('#btnSquare');
+const gridContainer = document.querySelector('#gridContainer');
+
 btnSquare.addEventListener('click', () => {
 	squares = Number(prompt('Select number of elements per side of the grid: ', "16"));
+    deleteGrid(gridContainer);
 });
-
-const gridContainer = document.querySelector('#gridContainer');
 
 for (let i = 0; i < squares; i++) {      //grid creation loop
     const row = document.createElement('div');
@@ -22,4 +23,10 @@ for (let i = 0; i < squares; i++) {      //grid creation loop
     }
 
     gridContainer.appendChild(row);
+}
+
+function deleteGrid(gridContainer) {
+	while (gridContainer.firstChild) {
+		gridContainer.removeChild(gridContainer.firstChild);
+	}
 }
