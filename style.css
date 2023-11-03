@@ -1,15 +1,18 @@
+#gridContainer {
+    max-width: 630px;
+    max-height: 630px;
+    aspect-ratio: 1 / 1;
+}
+
 .row {
     display: flex;
     background-color: white;
-    max-width: 600px;
-    max-height: 600px;
 }
 
 .gridElement {
     display: flex;
     flex: 1 1 auto;
     background-color: white;
-    min-width: 8px;
     aspect-ratio: 1 / 1;
     border: 1px solid black;
 }
